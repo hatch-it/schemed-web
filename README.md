@@ -1,2 +1,3 @@
 # schemed-web
-If you see this message, then this is the file that has been added to the development branch. 
+If you see
+> Frontend development repo for schemed.
