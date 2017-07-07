@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { 
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+} from 'react-router-dom';
+
 import TextInput from './components/TextInput';
 import Sharing from './components/Sharing';
 import DateSelection, { splitDate } from './components/DateSelection';
-
-const obj = { 0: "title", 1: "place", 2: "date", 3: "share" };
-let k = 0;
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -17,7 +21,6 @@ class App extends Component {
       day: "",
       month: "",
       year: "",
-      page: obj[k],
     };
   }
 
@@ -33,62 +36,65 @@ class App extends Component {
     this.setState(splitDate(event.target.value));
   }
 
-  handlePageChange = event => {
-    this.setState({ page: obj[++k] });
-  }
-
-  renderPage = () => {
-
-    switch (this.state.page) {
-      case obj[0]:
-        return (
-          <TextInput
-            title='Title your event'
-            onChange={this.handleTitleChange}
-            onSubmit={this.handlePageChange}
-          />
-        );
-      case obj[1]:
-        return (
-          <TextInput
-            title="Where will you meet?"
-            onChange={this.handlePlaceChange}
-            onSubmit={this.handlePageChange}
-          />
-        );
-      case obj[2]:
-        return (
-          <DateSelection
-            onChange={this.handleDateChange}
-            onSubmit={this.handlePageChange}
-          />
-        );
-      case obj[3]:
-        return <Sharing />;
-      default:
-        return <br />;
-    }
-  }
-
   renderDate() {
-    return ((this.state.day != "" && this.state.month != "" && this.state.year != "") ?
-      this.state.month + "/" + this.state.day + "/" + this.state.year : "")
+    const { day, month, year } = this.state;
+    if (day && month && year) {
+      return `${month}/${day}/${year}`;
+    }
+    return '';
   }
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <Router>
+        <div className="App">
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h2>Welcome to Schemed</h2>
+          </div>
+          <div>
+            <p className="App-intro">
+              <Route
+                exact
+                path='/'
+                render={props =>
+                  <Redirect to='/create/title' />
+                }
+              />
+              <Route
+                path='/create/title'
+                render={props =>
+                  <TextInput
+                    title='Title your event'
+                    onChange={this.handleTitleChange}
+                  />
+                }
+              />
+              <Route
+                path='/create/place'
+                render={props =>
+                  <TextInput
+                    title="Where will you meet?"
+                    onChange={this.handlePlaceChange}
+                  />
+                }
+              />
+              <Route
+                path='/create/time'
+                render={props =>
+                  <DateSelection
+                    onChange={this.handleDateChange}
+                  />
+                }
+              />
+            </p>
+            <p>Title: {this.state.title}</p>
+            <p>Place: {this.state.place}</p>
+            <p>Date: {this.renderDate()}</p>
+          </div>
         </div>
-        <div>
-          <p className="App-intro">{this.renderPage()}</p>
-          <p>Title: {this.state.title}</p>
-          <p>Place: {this.state.place}</p>
-          <p>Date: {this.renderDate()}</p>
-        </div>
-      </div>
+
+      </Router>
     );
   }
 }

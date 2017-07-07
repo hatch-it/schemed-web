@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import "./TextInput.css";
 
 export function splitDate(value) {
-  const tokens = event.target.value.split("-");
+  const tokens = value.split("-");
   const day = tokens[2];
   const month = tokens[1];
   const year = tokens[0];
-  return { date, month, year };
+  return { day, month, year };
 }
 
 class DateSelection extends Component {
