@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import "./TextInput.css";
 
+export function splitDate(value) {
+  const tokens = event.target.value.split("-");
+  const day = tokens[2];
+  const month = tokens[1];
+  const year = tokens[0];
+  return { date, month, year };
+}
+
 class DateSelection extends Component {
   constructor(props) {
     super(props);
@@ -11,20 +19,20 @@ class DateSelection extends Component {
     };
   }
 
-  handleEntry = event => {
-    if (this.props.onChange) this.props.onChange(event);
-    else {
-      let div = event.target.value.split("-"), d = div[2], m = div[1], y = div[0];
-      this.setState({day: d, month: m, year: y});
+  handleEntry = (event) => {
+    if (this.props.onChange) {
+      this.props.onChange(event);
+    } else {
+      this.setState(splitDate(event.target.value));
     }
   }
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     this.props.onSubmit(event);
   }
 
   render() {
-    return(
+    return (
       <div>
         <h1 className="title">Okay, but when?</h1>
         <input type="date" onChange={this.handleEntry} />

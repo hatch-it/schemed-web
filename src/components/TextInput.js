@@ -8,7 +8,7 @@ class TextInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text : "",
+      text: "",
     };
   }
 
@@ -16,7 +16,7 @@ class TextInput extends Component {
     if (this.props.onChange) {
       this.props.onChange(event);
     } else {
-      this.setState({text: event.target.value});
+      this.setState({ text: event.target.value });
     }
   }
 

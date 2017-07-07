@@ -1,45 +1,45 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TextInput from './components/TextInput'
-import Sharing from "./components/Sharing"
-import DateSelection from "./components/DateSelection"
+import TextInput from './components/TextInput';
+import Sharing from './components/Sharing';
+import DateSelection, { splitDate } from './components/DateSelection';
 
-var obj = {0: "title", 1: "place", 2: "date", 3: "share"};
-var k = 0;
+const obj = { 0: "title", 1: "place", 2: "date", 3: "share" };
+let k = 0;
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        title: "",
-        place: "",
-        day: "",
-        month: "",
-        year: "",
-        page: obj[k],
+      title: "",
+      place: "",
+      day: "",
+      month: "",
+      year: "",
+      page: obj[k],
     };
   }
 
   handleTitleChange = event => {
-    this.setState({title: event.target.value});
+    this.setState({ title: event.target.value });
   }
 
   handlePlaceChange = event => {
-    this.setState({place: event.target.value});
+    this.setState({ place: event.target.value });
   }
 
   handleDateChange = event => {
-    let div = event.target.value.split("-"), d = div[2], m = div[1], y = div[0];
-    this.setState({day: d, month: m, year: y});
+    this.setState(splitDate(event.target.value));
   }
 
   handlePageChange = event => {
-    this.setState({page: obj[++k]});
+    this.setState({ page: obj[++k] });
   }
 
   renderPage = () => {
-    switch(this.state.page) {
+
+    switch (this.state.page) {
       case obj[0]:
         return (
           <TextInput
@@ -72,7 +72,7 @@ class App extends Component {
 
   renderDate() {
     return ((this.state.day != "" && this.state.month != "" && this.state.year != "") ?
-        this.state.month + "/" + this.state.day + "/" + this.state.year : "")
+      this.state.month + "/" + this.state.day + "/" + this.state.year : "")
   }
 
   render() {
