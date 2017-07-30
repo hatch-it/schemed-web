@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { 
+import {
   BrowserRouter as Router,
   Route,
   Link,
   Redirect,
 } from 'react-router-dom';
 
+import createBrowserHistory from '../node_modules/history/createBrowserHistory'
 import TextInput from './components/TextInput';
 import Sharing from './components/Sharing';
 import DateSelection, { splitDate } from './components/DateSelection';
@@ -13,8 +14,12 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
   constructor(props) {
     super(props);
+    this.customHistory = createBrowserHistory({
+      forceRefresh: true,
+    });
     this.state = {
       title: "",
       place: "",
@@ -67,6 +72,8 @@ class App extends Component {
                   <TextInput
                     title='Title your event'
                     onChange={this.handleTitleChange}
+                    history={this.customHistory}
+                    nextQuery="place"
                   />
                 }
               />
@@ -76,6 +83,8 @@ class App extends Component {
                   <TextInput
                     title="Where will you meet?"
                     onChange={this.handlePlaceChange}
+                    history={this.customHistory}
+                    nextQuery="time"
                   />
                 }
               />

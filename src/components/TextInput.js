@@ -2,6 +2,7 @@
 //
 import React, { Component } from 'react';
 import "./TextInput.css";
+import createHistory from 'history/createBrowserHistory'
 
 
 class TextInput extends Component {
@@ -15,14 +16,13 @@ class TextInput extends Component {
   handleChange = event => {
     if (this.props.onChange) {
       this.props.onChange(event);
-    } else {
-      this.setState({ text: event.target.value });
     }
+    this.setState({ text: event.target.value });
   }
 
   handleSubmit = event => {
-    this.props.onSubmit(event);
     document.getElementById("entry").value = "";
+    this.props.history.push("/create/" + this.props.nextQuery);
   }
 
   render() {
