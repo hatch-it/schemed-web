@@ -1,17 +1,12 @@
 // TextInput.js
 //
-import React, { Component } from 'react';
-import "./TextInput.css";
-import createHistory from 'history/createBrowserHistory'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import "./TextInput.css"
 
 
 class TextInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: "",
-    };
-  }
+  state = { text: '' }
 
   handleChange = event => {
     if (this.props.onChange) {
@@ -20,18 +15,13 @@ class TextInput extends Component {
     this.setState({ text: event.target.value });
   }
 
-  handleSubmit = event => {
-    document.getElementById("entry").value = "";
-    this.props.history.push("/create/" + this.props.nextQuery);
-  }
-
   render() {
     return (
       <div>
-      <h1 className="title">{this.props.title}</h1>
-      <input type="text" id="entry" onChange={this.handleChange} />
-      <button type="button" onClick={this.handleSubmit}>Next</button>
-      <p>{this.state.text}</p>
+        <h1 className="title">{this.props.title}</h1>
+        <input type="text" onChange={this.handleChange} />
+        <Link to={this.props.nextPage || '/'}>Next</Link>
+        <p>{this.state.text}</p>
       </div>
     );
   }

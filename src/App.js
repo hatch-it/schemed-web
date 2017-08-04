@@ -13,6 +13,9 @@ import DateSelection, { splitDate } from './components/DateSelection';
 import logo from './logo.svg';
 import './App.css';
 
+import TitlePage from './pages/TitlePage'
+import PlacePage from './pages/PlacePage'
+
 
 
 /* TODO:
@@ -76,25 +79,11 @@ Route */
               />
               <Route
                 path='/create/title'
-                render={props =>
-                  <TextInput
-                    title='Title your event'
-                    onChange={this.handleTitleChange}
-                    history={this.customHistory}
-                    nextQuery="place"
-                  />
-                }
+                render={() => <TitlePage onChange={this.handleTitleChange} />}
               />
               <Route
                 path='/create/place'
-                render={props =>
-                  <TextInput
-                    title="Where will you meet?"
-                    onChange={this.handlePlaceChange}
-                    history={this.customHistory}
-                    nextQuery="time"
-                  />
-                }
+                render={() => <PlacePage onChange={this.handlePlaceChange} />}
               />
               <Route
                 path='/create/time'
