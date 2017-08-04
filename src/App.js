@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
   Link,
-  Redirect,
 } from 'react-router-dom';
 
 import createBrowserHistory from '../node_modules/history/createBrowserHistory'
@@ -17,13 +16,9 @@ import TitlePage from './pages/TitlePage'
 import PlacePage from './pages/PlacePage'
 import TimePage from './pages/TimePage'
 import SharePage from './pages/SharePage'
+import HomePage from './pages/HomePage'
 
 
-/* TODO:
- * 1. Keep refreshing occuring at appropriate times
- * 2. Save data when the pages change locations
- * 3. Add a Router element containing input results
- */
 class App extends Component {
 
   constructor(props) {
@@ -58,9 +53,6 @@ class App extends Component {
     return '';
   }
 
-/* Router ,
-Switch
-Route */
   render() {
     return (
       <Router>
@@ -71,12 +63,8 @@ Route */
           </div>
           <div>
             <p className="App-intro">
-              <Route
-                exact
-                path='/'
-                render={props =>
-                  <Redirect to='/create/title' />
-                }
+              <Route exact path='/'
+                render={() => <HomePage />}
               />
               <Route
                 path='/create/title'
