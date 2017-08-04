@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rsync -avz --progress \
+  -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
+  ./build/* \
+  schemed:/var/www/schemed-web/
