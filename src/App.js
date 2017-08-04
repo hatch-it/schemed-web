@@ -13,13 +13,18 @@ import DateSelection, { splitDate } from './components/DateSelection';
 import logo from './logo.svg';
 import './App.css';
 
+
+
+/* Revisions:
+ * 1. Keep refreshing occuring at appropriate times
+ * 2. Save data when the pages change locations
+ * 3. Add a Router element containing input results 
+ */
 class App extends Component {
 
   constructor(props) {
     super(props);
-    this.customHistory = createBrowserHistory({
-      forceRefresh: true,
-    });
+    this.customHistory = createBrowserHistory();
     this.state = {
       title: "",
       place: "",
@@ -49,6 +54,9 @@ class App extends Component {
     return '';
   }
 
+/* Router ,
+Switch
+Route */
   render() {
     return (
       <Router>

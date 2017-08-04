@@ -28,7 +28,7 @@ class DateSelection extends Component {
   }
 
   handleSubmit = (event) => {
-    this.props.onSubmit(event);
+    this.props.onChange(event);
   }
 
   render() {
