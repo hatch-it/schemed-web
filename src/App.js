@@ -15,10 +15,10 @@ import './App.css';
 
 
 
-/* Revisions:
+/* TODO:
  * 1. Keep refreshing occuring at appropriate times
  * 2. Save data when the pages change locations
- * 3. Add a Router element containing input results 
+ * 3. Add a Router element containing input results
  */
 class App extends Component {
 

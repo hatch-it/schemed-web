@@ -28,10 +28,10 @@ class TextInput extends Component {
   render() {
     return (
       <div>
-        <h1 className="title">{this.props.title}</h1>
-        <input type="text" id="entry" onChange={this.handleChange} />
-        <button type="button" onClick={this.handleSubmit}>Next</button>
-        <p>{this.state.text}</p>
+      <h1 className="title">{this.props.title}</h1>
+      <input type="text" id="entry" onChange={this.handleChange} />
+      <button type="button" onClick={this.handleSubmit}>Next</button>
+      <p>{this.state.text}</p>
       </div>
     );
   }
