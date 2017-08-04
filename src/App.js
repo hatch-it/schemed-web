@@ -15,7 +15,8 @@ import './App.css';
 
 import TitlePage from './pages/TitlePage'
 import PlacePage from './pages/PlacePage'
-
+import TimePage from './pages/TimePage'
+import SharePage from './pages/SharePage'
 
 
 /* TODO:
@@ -87,11 +88,11 @@ Route */
               />
               <Route
                 path='/create/time'
-                render={props =>
-                  <DateSelection
-                    onChange={this.handleDateChange}
-                  />
-                }
+                render={() => <TimePage onChange={this.handleDateChange} />}
+              />
+              <Route
+                path='/create/share'
+                render={() => <SharePage onChange={this.handleDateChange}/>}
               />
             </p>
             <p>Title: {this.state.title}</p>

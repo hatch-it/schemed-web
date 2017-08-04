@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./TextInput.css";
+import { Link } from 'react-router-dom'
 
 export function splitDate(value) {
   const tokens = value.split("-");
@@ -35,8 +36,9 @@ class DateSelection extends Component {
     return (
       <div>
         <h1 className="title">Okay, but when?</h1>
-        <input type="date" onChange={this.handleEntry} />
-        <button type="button" onClick={this.handleSubmit}>Next</button>
+        <input type="date" onChange={this.handleChange} />
+        <Link to={this.props.nextPage || '/'}>Next</Link>
+        <p>{this.state.text}</p>
       </div>
     );
   }
