@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import Sharing, { splitDate } from '../components/DateSelection'
+import Sharing from '../components/Sharing'
 
 class SharePage extends Component {
   render() {
     return (
       <Sharing
-        title='Sharing'
-        nextPage='/create/title'
+        title="Share to everyone yay!1!!"
         onChange={this.props.onChange}
       />
     )

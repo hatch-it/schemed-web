@@ -58,7 +58,6 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
             <h2>Welcome to Schemed</h2>
           </div>
           <div>
@@ -80,7 +79,7 @@ class App extends Component {
               />
               <Route
                 path='/create/share'
-                render={() => <SharePage onChange={this.handleDateChange}/>}
+                render={() => <SharePage/>}
               />
             </p>
             <p>Title: {this.state.title}</p>
