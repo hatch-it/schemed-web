@@ -20,7 +20,7 @@ class TextInput extends Component {
       <div>
         <h1 className="title">{this.props.title}</h1>
         <input type="text" onChange={this.handleChange} />
-        <Link to={this.props.nextPage || '/'}>Next</Link>
+        <Link className="button" to={this.props.nextPage || '/'}>Next</Link>
         <p>{this.state.text}</p>
       </div>
     );
