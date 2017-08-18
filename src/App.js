@@ -13,6 +13,7 @@ import DateSelection, { splitDate } from './components/DateSelection';
 import logo from './logo.svg';
 import './App.css';
 
+import AppContainer from './components/AppContainer'
 import TitlePage from './pages/TitlePage'
 import PlacePage from './pages/PlacePage'
 
@@ -57,17 +58,10 @@ class App extends Component {
     return '';
   }
 
-/* Router ,
-Switch
-Route */
   render() {
     return (
       <Router>
-        <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to Schemed</h2>
-          </div>
+        <AppContainer>
           <div>
             <p className="App-intro">
               <Route
@@ -98,8 +92,7 @@ Route */
             <p>Place: {this.state.place}</p>
             <p>Date: {this.renderDate()}</p>
           </div>
-        </div>
-
+        </AppContainer>
       </Router>
     );
   }
