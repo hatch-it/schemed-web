@@ -1,5 +1,6 @@
 # Compiled files
 build/
+*.css
 
 # Logs
 npm-debug.log*

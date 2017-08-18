@@ -10,7 +10,6 @@ import TextInput from './components/TextInput';
 import Sharing from './components/Sharing';
 import DateSelection, { splitDate } from './components/DateSelection';
 import logo from './logo.svg';
-import './App.css';
 
 import AppContainer from './components/AppContainer'
 import TitlePage from './pages/TitlePage'
@@ -58,7 +57,7 @@ class App extends Component {
     return (
       <Router>
         <AppContainer>
-          <p className="App-intro">
+          <div>
             <Route exact path='/'
               render={() => <HomePage />}
             />
@@ -78,10 +77,10 @@ class App extends Component {
               path='/create/share'
               render={() => <SharePage/>}
             />
-          </p>
-          <p>Title: {this.state.title}</p>
-          <p>Place: {this.state.place}</p>
-          <p>Date: {this.renderDate()}</p>
+          </div>
+          <div>Title: {this.state.title}</div>
+          <div>Place: {this.state.place}</div>
+          <div>Date: {this.renderDate()}</div>
         </AppContainer>
       </Router>
     );
