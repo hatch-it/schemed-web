@@ -9,7 +9,6 @@ import createBrowserHistory from '../node_modules/history/createBrowserHistory'
 import TextInput from './components/TextInput';
 import Sharing from './components/Sharing';
 import DateSelection, { splitDate } from './components/DateSelection';
-import logo from './logo.svg';
 
 import AppContainer from './components/AppContainer'
 import TitlePage from './pages/TitlePage'

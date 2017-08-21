@@ -15,9 +15,9 @@ const Icon = (props) =>
 
 Icon.propTypes = {
   name: PropTypes.string,
-  small: PropTypes.boolean,
-  medium: PropTypes.boolean,
-  large: PropTypes.boolean,
+  small: PropTypes.bool,
+  medium: PropTypes.bool,
+  large: PropTypes.bool,
   className: PropTypes.string,
 }
 

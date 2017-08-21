@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import "./TextInput.css";
 import { Link } from 'react-router-dom'
-import "../App.css"
 
 export function splitDate(value) {
   const tokens = value.split("-");

@@ -1,6 +1,1 @@
-import { Link } from 'react-router-dom'
-
-const FunctionalLink = (props) =>
-  <Link {...props} />
-
-export default FunctionalLink
+export { Link as default } from 'react-router-dom'
