@@ -65,10 +65,10 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="83.864314"
-     inkscape:cy="-6.6439432"
+     inkscape:cx="11.062545"
+     inkscape:cy="2.594963"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="text3884-81"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
@@ -88,7 +88,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -344,16 +344,38 @@
      inkscape:label="Layer 3"
      style="display:inline"
      transform="translate(-3.6953355,-16.697629)">
-    <text
-       xml:space="preserve"
+    <g
+       aria-label="SCHEMED"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.15572357px;line-height:1.25;font-family:'Unica One';-inkscape-font-specification:'Unica One';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.40389311"
-       x="22.226877"
-       y="30.030497"
-       id="text3884-81"><tspan
-         sodipodi:role="line"
-         id="tspan3882-31"
-         x="22.226877"
-         y="30.030497"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Unica One';-inkscape-font-specification:'Unica One';fill:#ffffff;stroke-width:0.40389311">SCHEMED</tspan></text>
+       id="text3884-81">
+      <path
+         d="m 28.97997,28.011031 q 0,2.261801 -2.730318,2.261801 -2.730317,0 -2.730317,-2.261801 v -1.373236 h 1.130901 v 1.437859 q 0,0.581606 0.403893,0.904721 0.403893,0.323114 1.195523,0.323114 0.791631,0 1.195524,-0.323114 0.403893,-0.323115 0.403893,-0.87241 0,-0.56545 -0.129246,-0.888564 -0.11309,-0.33927 -0.484671,-0.710852 l -2.843408,-2.778785 q -0.500827,-0.500827 -0.694696,-0.969343 -0.177713,-0.484672 -0.177713,-1.211679 0,-1.082434 0.662385,-1.66404 0.67854,-0.597762 2.035621,-0.597762 2.601071,0 2.601071,2.261802 v 1.373236 h -1.1309 v -1.437859 q 0,-0.581606 -0.387738,-0.904721 -0.371581,-0.323114 -1.1309,-0.323114 -0.759319,0 -1.147057,0.323114 -0.371581,0.323115 -0.371581,0.888565 0,0.56545 0.11309,0.888565 0.11309,0.323114 0.500827,0.67854 l 2.891875,2.778785 q 0.468516,0.516983 0.646229,1.001655 0.177713,0.468516 0.177713,1.195523 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Unica One';-inkscape-font-specification:'Unica One';fill:#ffffff;stroke-width:0.40389311"
+         id="path71" />
+      <path
+         d="m 35.846909,28.011031 v -0.888565 h 1.130901 v 0.888565 q 0,1.082434 -0.662385,1.680195 -0.662384,0.581606 -1.987154,0.581606 -1.324769,0 -2.003309,-0.581606 -0.678541,-0.597761 -0.678541,-1.680195 v -6.462289 q 0,-1.082434 0.662385,-1.66404 0.662385,-0.597762 1.987154,-0.597762 1.324769,0 2.00331,0.597762 0.67854,0.581606 0.67854,1.66404 v 1.534793 h -1.130901 v -1.534793 q 0,-1.292458 -1.534793,-1.292458 -1.534794,0 -1.534794,1.292458 v 6.462289 q 0,1.292458 1.534794,1.292458 1.534793,0 1.534793,-1.292458 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Unica One';-inkscape-font-specification:'Unica One';fill:#ffffff;stroke-width:0.40389311"
+         id="path73" />
+      <path
+         d="m 40.939748,30.030497 h -1.1309 V 19.529276 h 1.1309 v 4.68516 h 3.182678 v -4.68516 h 1.130901 V 30.030497 H 44.122426 V 25.18378 h -3.182678 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Unica One';-inkscape-font-specification:'Unica One';fill:#ffffff;stroke-width:0.40389311"
+         id="path75" />
+      <path
+         d="M 53.252177,30.030497 H 48.486239 V 19.529276 h 4.604381 v 0.969344 h -3.47348 v 3.715816 h 2.827251 V 25.18378 H 49.61714 v 3.877373 h 3.635037 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Unica One';-inkscape-font-specification:'Unica One';fill:#ffffff;stroke-width:0.40389311"
+         id="path77" />
+      <path
+         d="M 56.811485,30.030497 H 55.680584 V 19.529276 h 1.696351 l 1.841753,6.930806 1.857908,-6.930806 h 1.696351 v 10.501221 h -1.130901 v -8.69178 l -1.890219,7.076207 h -1.050122 l -1.89022,-7.076207 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Unica One';-inkscape-font-specification:'Unica One';fill:#ffffff;stroke-width:0.40389311"
+         id="path79" />
+      <path
+         d="M 70.76473,30.030497 H 65.998791 V 19.529276 h 4.604381 v 0.969344 h -3.47348 v 3.715816 h 2.827251 v 0.969344 h -2.827251 v 3.877373 h 3.635038 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Unica One';-inkscape-font-specification:'Unica One';fill:#ffffff;stroke-width:0.40389311"
+         id="path81" />
+      <path
+         d="M 75.794206,30.030497 H 73.193135 V 19.529276 h 2.601071 q 1.260147,0 1.906376,0.597762 0.662384,0.597762 0.662384,1.66404 v 5.977617 q 0,1.082434 -0.646229,1.680196 -0.646229,0.581606 -1.922531,0.581606 z m 1.43786,-2.261802 v -5.977617 q 0,-0.516984 -0.387738,-0.904721 -0.371581,-0.387737 -1.050122,-0.387737 h -1.470171 v 8.562533 h 1.470171 q 0.678541,0 1.050122,-0.371581 0.387738,-0.387738 0.387738,-0.920877 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Unica One';-inkscape-font-specification:'Unica One';fill:#ffffff;stroke-width:0.40389311"
+         id="path83" />
+    </g>
   </g>
 </svg>
