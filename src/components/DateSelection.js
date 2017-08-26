@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "./TextInput.css";
 import { Link } from 'react-router-dom'
 
 export function splitDate(value) {

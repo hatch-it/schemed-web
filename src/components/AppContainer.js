@@ -7,7 +7,7 @@ import logo from '../logo-only.svg'
 
 const App = (props) =>
   <div>
-    <section className="hero is-dark is-medium">
+    <section className="hero is-dark is-small">
       <div className="hero-head">
         <Navbar />
       </div>
