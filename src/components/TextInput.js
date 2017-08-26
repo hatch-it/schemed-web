@@ -17,7 +17,7 @@ class TextInput extends Component {
   render() {
     return (
       <Flex align="center" col>
-        <label style={{marginTop: "2em", marginBottom: "1em"}} className="label">{this.props.title}</label>
+        <label style={{marginTop: "2em", marginBottom: "1em", fontSize: "18px"}} className="label">{this.props.title}</label>
         <Flex>
           <div className="control" style={{marginRight: "1%" }}> 
             <input className="input" type="text" size="30" onChange={this.handleChange}  />
