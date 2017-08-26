@@ -20,7 +20,7 @@ class TextInput extends Component {
         <label style={{marginTop: "2em", marginBottom: "1em"}} className="label">{this.props.title}</label>
         <Flex>
           <div className="control" style={{marginRight: "1%" }}> 
-            <input className="input" type="text" size="40" onChange={this.handleChange}  />
+            <input className="input" type="text" size="30" onChange={this.handleChange}  />
           </div>
           <Link className="button is-primary" to={this.props.nextPage || '/'}>Next</Link>
         </Flex>
