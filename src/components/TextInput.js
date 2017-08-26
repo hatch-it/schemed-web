@@ -17,10 +17,12 @@ class TextInput extends Component {
   render() {
     return (
       <Flex align="center" col>
-        <h1 style={{margin: "2em"}} className="title">{this.props.title}</h1>
+        <label style={{marginTop: "2em", marginBottom: "1em"}} className="label">{this.props.title}</label>
         <Flex>
-          <input type="text" onChange={this.handleChange} />
-          <Link className="button is-primary is-medium" to={this.props.nextPage || '/'}>Next</Link>
+          <div className="control" style={{marginRight: "1%" }}> 
+            <input className="input" type="text" size="40" onChange={this.handleChange}  />
+          </div>
+          <Link className="button is-primary" to={this.props.nextPage || '/'}>Next</Link>
         </Flex>
         <p>{this.state.text}</p>
       </Flex>
