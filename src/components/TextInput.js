@@ -2,12 +2,11 @@
 //
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import "./TextInput.css"
+import Flex from "./Flex"
 
 
 class TextInput extends Component {
   state = { text: '' }
-
   handleChange = event => {
     if (this.props.onChange) {
       this.props.onChange(event);
@@ -17,12 +16,14 @@ class TextInput extends Component {
 
   render() {
     return (
-      <div>
-        <h1 className="title">{this.props.title}</h1>
-        <input type="text" onChange={this.handleChange} />
-        <Link className="button is-primary" to={this.props.nextPage || '/'}>Next</Link>
+      <Flex align="center" col>
+        <h1 style={{margin: "2em"}} className="title">{this.props.title}</h1>
+        <Flex>
+          <input type="text" onChange={this.handleChange} />
+          <Link className="button is-primary is-medium" to={this.props.nextPage || '/'}>Next</Link>
+        </Flex>
         <p>{this.state.text}</p>
-      </div>
+      </Flex>
     );
   }
 }

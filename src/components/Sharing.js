@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import "./TextInput.css";
 
 class Sharing extends Component {
   constructor(props) {
