@@ -21,14 +21,14 @@ class DateSelection extends Component {
 
   handleEntry = (event) => {
     if (this.props.onChange) {
-      this.props.onChange(event);
+      this.props.onChange(event.currentTarget.value);
     } else {
       this.setState(splitDate(event.target.value));
     }
   }
 
   handleSubmit = (event) => {
-    this.props.onChange(event);
+    this.props.onChange(event.currentTarget.value);
   }
 
   render() {

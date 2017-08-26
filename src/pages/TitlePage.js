@@ -7,7 +7,7 @@ class TitlePage extends Component {
       <TextInput
         title='Title your event'
         nextPage='/create/place'
-        onChange={this.props.onChange}
+        {...this.props}
       />
     )
   }

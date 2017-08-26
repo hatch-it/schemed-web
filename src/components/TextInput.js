@@ -6,12 +6,8 @@ import Flex from "./Flex"
 
 
 class TextInput extends Component {
-  state = { text: '' }
   handleChange = event => {
-    if (this.props.onChange) {
-      this.props.onChange(event);
-    }
-    this.setState({ text: event.target.value });
+      this.props.onChange(event.currentTarget.value);
   }
 
   render() {
@@ -20,11 +16,10 @@ class TextInput extends Component {
         <label style={{marginTop: "2em", marginBottom: "1em", fontSize: "18px", fontWeight: "normal"}} className="label">{this.props.title}</label>
         <Flex>
           <div className="control" style={{marginRight: "1%" }}> 
-            <input className="input" type="text" size="30" onChange={this.handleChange}  />
+            <input className="input" type="text" size="30" onChange={this.handleChange} value={this.props.value}/>
           </div>
           <Link className="button is-primary" to={this.props.nextPage || '/'}>Next</Link>
         </Flex>
-        <p>{this.state.text}</p>
       </Flex>
     );
   }

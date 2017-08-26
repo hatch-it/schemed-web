@@ -7,7 +7,7 @@ class PlacePage extends Component {
       <TextInput
         title='Where will you meet?'
         nextPage='/create/time'
-        onChange={this.props.onChange}
+        {...this.props}
       />
     )
   }

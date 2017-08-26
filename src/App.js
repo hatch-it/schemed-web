@@ -32,16 +32,17 @@ class App extends Component {
     };
   }
 
-  handleTitleChange = event => {
-    this.setState({ title: event.target.value });
+  handleTitleChange = value => {
+    this.setState({ title: value });
   }
 
-  handlePlaceChange = event => {
-    this.setState({ place: event.target.value });
+  handlePlaceChange = value => {
+    this.setState({ place: value });
   }
 
-  handleDateChange = event => {
-    this.setState(splitDate(event.target.value));
+  handleDateChange = value => {
+    console.log(value)
+    this.setState(splitDate(value));
   }
 
   renderDate() {
@@ -62,11 +63,11 @@ class App extends Component {
             />
             <Route
               path='/create/title'
-              render={() => <TitlePage onChange={this.handleTitleChange} />}
+              render={() => <TitlePage onChange={this.handleTitleChange} value={this.state.title}/>}
             />
             <Route
               path='/create/place'
-              render={() => <PlacePage onChange={this.handlePlaceChange} />}
+              render={() => <PlacePage onChange={this.handlePlaceChange} value={this.state.place} />}
             />
             <Route
               path='/create/time'
@@ -77,9 +78,6 @@ class App extends Component {
               render={() => <SharePage/>}
             />
           </div>
-          <div>Title: {this.state.title}</div>
-          <div>Place: {this.state.place}</div>
-          <div>Date: {this.renderDate()}</div>
         </AppContainer>
       </Router>
     );
