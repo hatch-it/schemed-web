@@ -71,7 +71,7 @@ class App extends Component {
             />
             <Route
               path='/create/time'
-              render={() => <TimePage onChange={this.handleDateChange} />}
+              render={() => <TimePage onChange={this.handleDateChange} value={this.renderDate()} />}
             />
             <Route
               path='/create/share'
