@@ -5,8 +5,8 @@ class SharePage extends Component {
   render() {
     return (
       <Sharing
-        title="Share to everyone yay!1!!"
-        onChange={this.props.onChange}
+        title="Spread the Word!"
+        {...this.props}
       />
     )
   }

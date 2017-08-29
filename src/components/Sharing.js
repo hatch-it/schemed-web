@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Flex from "./Flex"
 
 class Sharing extends Component {
   constructor(props) {
@@ -10,13 +11,15 @@ class Sharing extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Spread the Word!</h2>
-        <a href="https://sambalana.slack.com" target="_blank">
-          <p>{this.state.url}</p>
-        </a>
-      </div>
-    );
+      <Flex align="center" col>
+        <label style={{marginTop: "2em", marginBottom: "1em", fontSize: "18px", fontWeight: "normal"}} className="label">{this.props.title}</label>
+        <div>
+          <a href="https://sambalana.slack.com" target="_blank">
+            <p>{this.state.url}</p>
+          </a>
+        </div>
+      </Flex>
+    )
   }
 }
 

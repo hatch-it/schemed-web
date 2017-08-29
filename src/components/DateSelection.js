@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import Flex from "./Flex"
 
 export function splitDate(value) {
   const tokens = value.split("-");
@@ -33,12 +34,15 @@ class DateSelection extends Component {
 
   render() {
     return (
-      <div>
-        <h1 className="title">Okay, but when?</h1>
-        <input type="date" onChange={this.handleEntry} />
-        <Link className="button" to={this.props.nextPage || '/'}>Next</Link>
-        <p>{this.state.text}</p>
-      </div>
+      <Flex align="center" col>
+        <label style={{marginTop: "2em", marginBottom: "1em", fontSize: "18px", fontWeight: "normal"}} className="label">{this.props.title}</label>
+        <Flex>
+          <div className="control" style={{marginRight: "1%" }}> 
+            <input className="input" type="date" size="30" onChange={this.handleEntry} value={this.state.text}/>
+          </div>
+          <Link className="button is-primary" to={this.props.nextPage || '/'}>Next</Link>
+        </Flex>
+      </Flex>
     );
   }
 }
