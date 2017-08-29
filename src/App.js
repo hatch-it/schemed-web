@@ -57,27 +57,25 @@ class App extends Component {
     return (
       <Router>
         <AppContainer>
-          <div>
-            <Route exact path='/'
-              render={() => <HomePage />}
-            />
-            <Route
-              path='/create/title'
-              render={() => <TitlePage onChange={this.handleTitleChange} value={this.state.title}/>}
-            />
-            <Route
-              path='/create/place'
-              render={() => <PlacePage onChange={this.handlePlaceChange} value={this.state.place} />}
-            />
-            <Route
-              path='/create/time'
-              render={() => <TimePage onChange={this.handleDateChange} />}
-            />
-            <Route
-              path='/create/share'
-              render={() => <SharePage/>}
-            />
-          </div>
+          <Route exact path='/'
+            render={() => <HomePage />}
+          />
+          <Route
+            path='/create/title'
+            render={() => <TitlePage onChange={this.handleTitleChange} value={this.state.title}/>}
+          />
+          <Route
+            path='/create/place'
+            render={() => <PlacePage onChange={this.handlePlaceChange} value={this.state.place} />}
+          />
+          <Route
+            path='/create/time'
+            render={() => <TimePage onChange={this.handleDateChange} />}
+          />
+          <Route
+            path='/create/share'
+            render={() => <SharePage/>}
+          />
         </AppContainer>
       </Router>
     );
