@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 const Map = withGoogleMap(props => ( 
   <GoogleMap
-    ref={props.onMapLoad} defaultZoom={3} 
+    ref={props.onMapLoad} defaultZoom={ props.zoom } 
     defaultCenter={{ lat: props.lat, lng: props.lng }}
     onClick={props.onMapClick}>
   </GoogleMap>
