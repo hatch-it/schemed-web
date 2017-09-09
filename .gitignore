@@ -9,6 +9,7 @@ yarn-error.log*
 
 # Dependencies
 node_modules/
+react-google-maps/
 
 # Environmental variables
 .env
