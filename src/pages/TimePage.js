@@ -8,6 +8,7 @@ class TimePage extends Component {
         title='Okay, but when?'
         nextPage='/create/share'
         type='date'
+        size='55'
         {...this.props}
       />
     )

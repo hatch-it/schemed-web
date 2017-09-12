@@ -1,6 +1,9 @@
+// PlacePage.js
+
 import React, { Component } from 'react'
 import Map from '../components/Map'
 import TextInput from '../components/TextInput'
+
 
 class PlacePage extends Component {
   constructor(props) {
@@ -10,7 +13,6 @@ class PlacePage extends Component {
       lng: 0,
       zoom: 3
     }
-    console.log(props)
   }
 
   setCoords = () => {
@@ -19,24 +21,40 @@ class PlacePage extends Component {
     }
   }
 
+  getClickCoords = event => {
+    const lat = event.latLng.lat()
+    const lng = event.latLng.lng()
+
+    this.state.lat = lat 
+    this.state.lng = lng 
+
+    this.makeRequest(lat, lng)
+  }
+
+  makeRequest = (lat, lng) => {
+    let xhttp = new XMLHttpRequest()
+    const baseURL = 'https://maps.googleapis.com/maps/api/geocode/json?'
+    const latlng  = 'latlng=' + lat + ',' + lng
+    const APIkey  = '&key=AIzaSyBuIYgWelclGIon27DfSCTrzcWLDubolCQ'
+
+    xhttp.open('GET', baseURL + latlng + APIkey)
+    xhttp.responseType = 'json'
+    xhttp.send() 
+
+    xhttp.onload = () => {
+      if (xhttp.response.results.length) {
+        this.props.onChange(xhttp.response.results[0].formatted_address)
+      }
+    }
+  }
+
   newGeolocation = position => {
-    console.log(position.coords)
     this.state.lat = position.coords.latitude
     this.state.lng = position.coords.longitude
   }
 
-  setLocation = (event) => {
-    // set the location and send it up
-    var location = "TEST"
-    // TODO From here get click coordiantes -> map coordinates -> address -> place name 
-    this.props.onChange(location)
-    console.log("Location is now " + location)
-  }
-
-
   render() {
-    // TODO create delay for geolocations to be reassigned
-    this.setCoords()  
+    this.setCoords()
     const mapStyle = {
       margin: '5vh 0 3vh 0',
       height: '75vh',
@@ -47,15 +65,16 @@ class PlacePage extends Component {
         <TextInput
           title='Where will you meet?'
           nextPage='/create/time'
+          size='55'
           {...this.props}
         />
-        <Map 
+        <Map
           lat={this.state.lat}
           lng={this.state.lng}
           zoom={this.state.zoom}
-          onClick={this.setLocation}
+          onClick={this.getClickCoords}
           containerElement={<div />}
-          mapElement={ <div style={mapStyle} />
+          mapElement={<div style={mapStyle} />
           }
         />
       </div>
