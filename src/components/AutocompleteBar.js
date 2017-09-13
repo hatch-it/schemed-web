@@ -42,7 +42,7 @@ class AutocompleteBar extends Component {
     return (
       <Flex align="center" col>
         <label style={{ marginTop: "2em", marginBottom: "1em", fontSize: "18px", fontWeight: "normal" }} className="label">Okay, but where?</label>
-        <Flex >
+        <Flex>
           <div className="control input-box">
             <PlacesAutocomplete inputProps={autocompleteProps}
               classNames={autocompleteClassNames} />
