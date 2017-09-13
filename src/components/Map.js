@@ -1,6 +1,7 @@
 import { withGoogleMap, GoogleMap } from "react-google-maps";
-import React, { Component } from 'react';
+import React from 'react';
 
+// Stateless component  
 
 const Map =
   withGoogleMap(
@@ -12,7 +13,6 @@ const Map =
       </GoogleMap>
     )
   );
-
 
 export default Map;
 

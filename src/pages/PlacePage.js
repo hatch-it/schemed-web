@@ -1,8 +1,6 @@
-// PlacePage.js
-
 import React, { Component } from 'react'
 import Map from '../components/Map'
-import TextInput from '../components/TextInput'
+import AutocompleteBar from '../components/AutocompleteBar'
 
 
 class PlacePage extends Component {
@@ -11,7 +9,7 @@ class PlacePage extends Component {
     this.state = {
       lat: 0,
       lng: 0,
-      zoom: 3
+      zoom: 3,
     }
   }
 
@@ -22,35 +20,36 @@ class PlacePage extends Component {
   }
 
   getClickCoords = event => {
-    const lat = event.latLng.lat()
-    const lng = event.latLng.lng()
+    this.setState({ lat: event.latLng.lat() }) 
+    this.setState({ lng: event.latLng.lng() }) 
 
-    this.state.lat = lat 
-    this.state.lng = lng 
+    this.makeRequest(this.state.lat, this.state.lng)
+  }
 
-    this.makeRequest(lat, lng)
+  buildURL = (lat, lng) => {
+    const baseURL = 'https://maps.googleapis.com/maps/api/geocode/json?'
+    const latlng = 'latlng=' + lat + ',' + lng
+    const APIkey = '&key=AIzaSyBuIYgWelclGIon27DfSCTrzcWLDubolCQ'
+    return baseURL + latlng + APIkey
   }
 
   makeRequest = (lat, lng) => {
     let xhttp = new XMLHttpRequest()
-    const baseURL = 'https://maps.googleapis.com/maps/api/geocode/json?'
-    const latlng  = 'latlng=' + lat + ',' + lng
-    const APIkey  = '&key=AIzaSyBuIYgWelclGIon27DfSCTrzcWLDubolCQ'
-
-    xhttp.open('GET', baseURL + latlng + APIkey)
+    xhttp.open('GET', this.buildURL(lat, lng))
     xhttp.responseType = 'json'
-    xhttp.send() 
+    xhttp.send()
 
     xhttp.onload = () => {
       if (xhttp.response.results.length) {
+        console.log(xhttp.response)
         this.props.onChange(xhttp.response.results[0].formatted_address)
       }
     }
   }
 
   newGeolocation = position => {
-    this.state.lat = position.coords.latitude
-    this.state.lng = position.coords.longitude
+    this.setState({lat: position.coords.latitude })
+    this.setState({lng: position.coords.longitude})
   }
 
   render() {
@@ -58,16 +57,13 @@ class PlacePage extends Component {
     const mapStyle = {
       margin: '5vh 0 3vh 0',
       height: '75vh',
-      boxShadow: "2vw 2vh 1vh grey"
+      boxShadow: "2vw 2vh 1vh grey",
+      zIndex: '-1',
     }
+
     return (
       <div>
-        <TextInput
-          title='Where will you meet?'
-          nextPage='/create/time'
-          size='55'
-          {...this.props}
-        />
+        <AutocompleteBar />
         <Map
           lat={this.state.lat}
           lng={this.state.lng}
