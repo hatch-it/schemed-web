@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Map from '../components/Map'
 import PlacesAutocomplete, { getLatLng, geocodeByAddress } from 'react-places-autocomplete'
 import { Link } from 'react-router-dom'
+import Map from '../components/Map'
 import Flex from "../components/Flex"
 
 
@@ -23,8 +23,8 @@ class PlacePage extends Component {
   }
 
   getClickCoords = event => {
-    this.state.lat = event.latLng.lat() 
-    this.state.lng = event.latLng.lng() 
+    this.setState({lat: event.latLng.lat()})
+    this.setState({lng: event.latLng.lng()})
 
     this.makeRequest(this.state.lat, this.state.lng)
   }
@@ -46,13 +46,14 @@ class PlacePage extends Component {
       if (xhttp.response.results.length) {
         console.log(xhttp.response)
         this.props.onChange(xhttp.response.results[0].formatted_address)
+        this.setState({ address : xhttp.response.results[0].formatted_address })
       }
     }
   }
 
   newGeolocation = position => {
-    this.state.lat = position.coords.latitude 
-    this.state.lng = position.coords.longitude
+    this.setState({lat : position.coords.latitude})
+    this.setState({lng : position.coords.longitude})
   }
 
   handleFormSubmit = (event) => {
@@ -64,19 +65,23 @@ class PlacePage extends Component {
   }
 
   onAddressChange = address => {
-    console.log(address)
     this.setState({ address })
   }
 
   render() {
     this.setCoords()
-    const mapStyle = {
-      margin: '5vh 0 3vh 0',
-      height: '75vh',
-      boxShadow: "2vw 2vh 1vh grey",
-      zIndex: '1',
 
+    const wrapperStyle = {
+      position: 'relative', zIndex: '2'
     }
+
+    const labelStyle = {
+      marginTop: "2em",
+      marginBottom: "1em",
+      fontSize: "18px",
+      fontWeight: "normal"
+    }
+
     const autocompleteProps = {
       value: this.state.address,
       onChange: this.onAddressChange,
@@ -85,29 +90,38 @@ class PlacePage extends Component {
     const autocompleteClassNames = {
       input: 'input input-box place-size',
     }
-
+    
+    const buttonStyle = {
+      padding: '0',
+      border: '0',
+      background: 'white'
+    }
+      
     const linkStyle = {
       color: "white",
     }
 
-    const wrapperStyle = {
-      position: 'relative', zIndex: '2'
+    const mapStyle = {
+      margin: '5vh 0 3vh 0',
+      height: '75vh',
+      boxShadow: "2vw 2vh 1vh grey",
+      zIndex: '1',
     }
 
     return (
       <div>
-        <Flex align="center" style={wrapperStyle} col>
-          <label style={{ marginTop: "2em", marginBottom: "1em", fontSize: "18px", fontWeight: "normal" }} className="label">Okay, but where?</label>
+        < Flex align="center" style={wrapperStyle} col>
+          <label style={labelStyle} className="label">Okay, but where?</label>
           <Flex>
             <div className="control input-box">
               <PlacesAutocomplete inputProps={autocompleteProps}
                 classNames={autocompleteClassNames} />
             </div>
-            <button className="button is-primary" onClick={this.handleFormSubmit}>
-              <Link style={linkStyle} to='/create/time'>Next</Link>
+            <button style={buttonStyle} onClick={this.handleFormSubmit}>
+              <Link style={linkStyle} className="button is-primary" to='/create/time'>Next</Link>
             </button>
           </Flex>
-        </Flex>
+        </Flex >
         <Map
           lat={this.state.lat}
           lng={this.state.lng}
