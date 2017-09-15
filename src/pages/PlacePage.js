@@ -88,7 +88,8 @@ class PlacePage extends Component {
     }
 
     const autocompleteClassNames = {
-      input: 'input input-box place-size',
+      input: 'input',
+      root: 'control is-expanded set-width' 
     }
     
     const buttonStyle = {
@@ -113,7 +114,7 @@ class PlacePage extends Component {
         < Flex align="center" style={wrapperStyle} col>
           <label style={labelStyle} className="label">Okay, but where?</label>
           <Flex>
-            <div className="control input-box">
+            <div className="input-box">
               <PlacesAutocomplete inputProps={autocompleteProps}
                 classNames={autocompleteClassNames} />
             </div>
