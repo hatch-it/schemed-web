@@ -109,6 +109,11 @@ class PlacePage extends Component {
       zIndex: '1',
     }
 
+    const creditStyle = {
+      padding: "2%", 
+      textAlign: "center"
+    }
+
     return (
       <div>
         < Flex align="center" style={wrapperStyle} col>
@@ -129,9 +134,9 @@ class PlacePage extends Component {
           zoom={this.state.zoom}
           onClick={this.getClickCoords}
           containerElement={<div />}
-          mapElement={<div style={mapStyle} />
-          }
+          mapElement={<div style={mapStyle} />}
         />
+        <p style={creditStyle}>This page's map and autcomplete capabilities by Google</p>
       </div>
     )
   }
