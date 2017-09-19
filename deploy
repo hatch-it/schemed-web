@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+
+npm run build
 
 rsync -avz --progress \
   -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
