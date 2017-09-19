@@ -6,9 +6,8 @@ import {
 } from 'react-router-dom';
 
 import createBrowserHistory from '../node_modules/history/createBrowserHistory'
-import TextInput from './components/TextInput';
 import Sharing from './components/Sharing';
-import DateSelection, { splitDate } from './components/DateSelection';
+import TextInput, { splitDate } from './components/TextInput';
 
 import AppContainer from './components/AppContainer'
 import TitlePage from './pages/TitlePage'
@@ -29,6 +28,7 @@ class App extends Component {
       day: "",
       month: "",
       year: "",
+      date: "", 
     };
   }
 
@@ -41,7 +41,8 @@ class App extends Component {
   }
 
   handleDateChange = value => {
-    this.setState(splitDate(value));
+    //this.setState(splitDate(value));
+    this.setState( {date: value})
   }
 
   renderDate() {
@@ -69,7 +70,7 @@ class App extends Component {
           />
           <Route
             path='/create/time'
-            render={() => <TimePage onChange={this.handleDateChange} value={this.renderDate()} />}
+            render={() => <TimePage onChange={this.handleDateChange} value={this.state.date} />}
           />
           <Route
             path='/create/share'

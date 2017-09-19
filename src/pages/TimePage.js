@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import DateSelection, { splitDate } from '../components/DateSelection'
+import TextInput from '../components/TextInput'
 
 class TimePage extends Component {
   render() {
     return (
-      <DateSelection
+      <TextInput
         title='Okay, but when?'
         nextPage='/create/share'
-        onChange={this.props.onChange}
+        type='date'
+        size='55'
+        {...this.props}
       />
     )
   }
