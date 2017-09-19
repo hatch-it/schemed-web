@@ -9,7 +9,7 @@ const App = (props) =>
   <div>
     <section className="hero is-dark is-small">
       <div className="hero-head">
-        <Navbar />
+        <Navbar match={props.match} />
       </div>
 
       <div className="hero-body">

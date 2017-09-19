@@ -1,4 +1,6 @@
 import React from 'react'
+import { withRouter } from 'react-router'
+import classNames from 'classnames'
 
 import Icon from './Icon'
 import Link from './Link'
@@ -18,17 +20,11 @@ const Navbar = (props) =>
         <span></span>
       </span>
       <div className="nav-right nav-menu">
-        <a className="nav-item is-active">
-          Home
-        </a>
-        <a className="nav-item">
-          About
-        </a>
-        <a className="nav-item">
-          Documentation
-        </a>
+        <Link className="nav-item" to="/">Home</Link>
+        <Link className="nav-item" to="/about">About</Link>
+        <Link className="nav-item" to="/docs">Docs</Link>
         <span className="nav-item">
-          <a className="button is-primary is-inverted">
+          <a className="button is-inverted">
             <Icon name="github" />
             <span>Star</span>
           </a>
