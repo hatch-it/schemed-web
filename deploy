@@ -4,3 +4,7 @@ rsync -avz --progress \
   -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
   ./build/* \
   schemed:/var/www/schemed-web/
+
+ssh schemed -t "
+  sudo chown -R www-data:www-data /var/www/schemed-web
+"
