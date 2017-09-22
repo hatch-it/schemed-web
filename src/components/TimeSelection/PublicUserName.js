@@ -1,0 +1,3 @@
+/* PublicUserName.js 
+Component which displays the name of a user asked to attend the same event. 
+*/
