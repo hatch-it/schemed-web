@@ -1,0 +1,3 @@
+/* AvailabilityDuration.js
+Component which displays the amount of time between a StartTime and EndTime by hour and minute.
+*/

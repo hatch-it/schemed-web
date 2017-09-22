@@ -24,3 +24,20 @@ body
 
 .set-width
   width: 50vw;
+
+#dayContainer::-webkit-scrollbar 
+  display: none;
+
+#dayContainer::scrollbar 
+  display: none;
+  
+#dayContainer::selection 
+  background: rgba(0, 0, 0, 0);
+
+#dayContainer div::-moz-selection 
+  background: rgba(0, 0, 0, 0);
+  
+#dayContainer div
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;

@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
-import TextInput from '../components/TextInput'
+import TimeSignpostContainer from '../components/TimeSelection/TimeSignpostContainer'
+
 
 class TimePage extends Component {
-  render() {
-    return (
-      <TextInput
-        title='Okay, but when?'
-        nextPage='/create/share'
-        type='date'
-        size='55'
-        {...this.props}
-      />
-    )
+  constructor(props) {
+    super(props)
   }
-}
+
+  render() {
+    return (<TimeSignpostContainer />)
+  }
+} 
 
 export default TimePage

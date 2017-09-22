@@ -1,0 +1,3 @@
+/* AvailabilityBar.js
+Component which visualizes the time between a StartTime and EndTime as a thin bar.
+*/

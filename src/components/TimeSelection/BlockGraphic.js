@@ -1,0 +1,3 @@
+/* BlockGraphic.js
+Component which visualizes the time available for an event in a block shape.
+*/
