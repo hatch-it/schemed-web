@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import TextInput from '../components/TextInput'
 import CalendarInput from '../components/CalendarInput'
+import { getAvailabilities } from '../api'
 
 class TimePage extends Component {
   constructor(props) {
     super(props)
+    console.log(getAvailabilities())
   }
 
   render() {
@@ -19,6 +21,6 @@ class TimePage extends Component {
       />
     )
   }
-} 
+}
 
 export default TimePage
