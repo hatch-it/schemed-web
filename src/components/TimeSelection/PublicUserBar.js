@@ -1,0 +1,3 @@
+/* PublicUserBar.js
+Component whose purpose is to visually display when other users invited to an event in the form of a thin vertical bar. 
+*/

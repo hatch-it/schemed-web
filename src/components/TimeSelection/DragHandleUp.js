@@ -1,0 +1,3 @@
+/* DragHandleUp.js
+Component which allows a user to expand his or her availability to earlier in the day.
+*/

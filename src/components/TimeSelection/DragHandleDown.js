@@ -1,0 +1,3 @@
+/* DragHandleDown.js
+Component which allows a user to expand his or her availability to later in the day.
+*/

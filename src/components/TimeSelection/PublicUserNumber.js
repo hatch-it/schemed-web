@@ -1,0 +1,3 @@
+/* PublicUserNumber.js
+Component which allows the user to view the number of other users invited to the same event which are free at a specified time.
+*/
