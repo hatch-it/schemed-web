@@ -1,7 +1,7 @@
 import uuid from 'uuid/v4'
 
 
-export function getAvailabilities() {
+export function getMonth() {
   // Generate some mock data
   const now = new Date()
   const currYear = now.getFullYear()
@@ -12,17 +12,17 @@ export function getAvailabilities() {
   }
 
   const mockData = {
-    prevMonth: [],
-    currentMonth: [
+    year: currYear,
+    month: currMonth,
+    availabilities: [
       { id: uuid(), name: 'Only if there is pizza', begin: makeTime(1, 8, 30), end: makeTime(1, 9, 30) },
-    ],
-    nextMonth: [],
+    ]
   }
 
   // Generate some interesting ranges
   for (let i = 0; i < 3; i++) {
     const day = 2 + (i * 7)
-    mockData.currentMonth.push(
+    mockData.availabilities.push(
       { id: uuid(), begin: makeTime(day, i % 24, i), end: makeTime(day, (i % 24) + 12, 60 - i) },
     )
   }
