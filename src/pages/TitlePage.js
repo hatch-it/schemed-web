@@ -6,6 +6,7 @@ class TitlePage extends Component {
     return (
       <TextInput
         title='Title your event'
+        lastPage='/create/home'
         nextPage='/create/place'
         size="55"
         {...this.props}

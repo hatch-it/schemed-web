@@ -119,6 +119,9 @@ class PlacePage extends Component {
         < Flex align="center" style={wrapperStyle} col>
           <label style={labelStyle} className="label">Okay, but where?</label>
           <Flex>
+            <button style={buttonStyle} onClick={this.handleFormSubmit}>
+              <Link style={linkStyle} className="button is-primary" to='/create/title'>Back</Link>
+            </button>
             <div className="input-box">
               <PlacesAutocomplete inputProps={autocompleteProps}
                 classNames={autocompleteClassNames} />

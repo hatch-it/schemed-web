@@ -38,7 +38,10 @@ class TextInput extends Component {
     return (
       <Flex align="center" col>
         <label style={{marginTop: "2em", marginBottom: "1em", fontSize: "18px", fontWeight: "normal"}} className="label">{this.props.title}</label>
-        <Flex>
+        <Flex align="left" row>
+          <div>
+            <Link className="button is-primary" to={this.props.lastPage || '/'}>Back</Link>
+          </div>
           <div className="control input-box"> 
             <input className="input" type={this.props.type || 'text'} size={this.props.size} onChange={this.handleChange} value={this.props.value}/>
           </div>
