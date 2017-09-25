@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 /*
-
 type Props = {
   month: Month,
   onMonthChange: (month: number) => void,

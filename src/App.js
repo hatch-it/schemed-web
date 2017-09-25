@@ -15,6 +15,7 @@ import PlacePage from './pages/PlacePage'
 import TimePage from './pages/TimePage'
 import SharePage from './pages/SharePage'
 import HomePage from './pages/HomePage'
+import TimeSelectionPage from './pages/TimeSelectionPage'
 
 
 class App extends Component {
@@ -71,6 +72,10 @@ class App extends Component {
           <Route
             path='/create/time'
             render={() => <TimePage onChange={this.handleDateChange} value={this.state.date} />}
+          />
+          <Route
+            path='/create/timeselection'
+            render={() => <TimeSelectionPage/>}
           />
           <Route
             path='/create/share'

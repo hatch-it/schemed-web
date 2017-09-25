@@ -48,7 +48,7 @@ class CalendarInput extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to="/create/clock" />;
+      return <Redirect push to="/create/timeselection" />;
     }
     return (
       <Flex align="center" col>
